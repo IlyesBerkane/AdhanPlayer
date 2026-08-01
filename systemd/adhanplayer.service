@@ -1,0 +1,14 @@
+[Unit]
+Description=Adhan Player
+After=network-online.target bluetooth.target sound.target
+Wants=network-online.target
+
+[Service]
+User=ilyesberkane
+WorkingDirectory=/home/ilyesberkane/AdhanPlayer
+ExecStart=/usr/bin/python3 /home/ilyesberkane/AdhanPlayer/adhanPlayer.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
